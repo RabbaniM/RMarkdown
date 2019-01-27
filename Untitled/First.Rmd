@@ -1,0 +1,222 @@
+---
+layout: true
+background-image: url(img/goat_yoga.png)
+background-position: 0% 100%
+background-size: 10%
+
+title: "Hello Markdown"
+author: "Rabbani M <br>
+<span style = 'font-size: 50%;'>
+Vanderbilt University Medical Center <br>
+Department of Biostatistics + Center for Critical Illness, 
+Brain Dysfunction & Survivorship </span> "
+date: "`r Sys.Date()`"
+output: 
+  xaringan::moon_reader:
+    css: ['default', metropolis, metropolis-fonts, 'custom.css']
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      titleSlideClass: ["left", "middle", "inverse"]
+params:
+  name1: Alison
+  name2: Allison
+
+
+
+---
+class: center, middle
+
+background-image: url(peocock.jpg)
+background-size: cover
+
+name: agenda
+
+class: right, top
+# <font color="white"> Agenda </font>
+
+<font color="white">
+
+1. Intro <br>
+2. Main message <br>
+3. Conclusion <br>
+</font>
+
+<span style="color:white">
+.large[Rabbani M | R Conference | 16 Jan 2019]
+</span>
+---
+
+# Introduce yourself!
+
+.left[This is left aligned]
+.left[and babies.]
+
+> My name is Rabbani and I am a Data Scientist & Professional. I live in Reston, Virginia. I like `#rdogladies`
+.right[
+### Find me at...
+All the details...]
+---
+# Two Columns
+.pull-left[
+### Mom Cat
+![Image of Momtocat](http://bit.ly/momtocat)
+]
+.pull-right[
+### Wiki Toddy
+![Image of Tea](http://bit.ly/wiki-toddy)
+]
+
+???
+My notes
+???
+---
+# Incremental Reveal
+I like hot toddies
+<br>
+--
+`#rdogladies`
+<br>
+--
+and babies
+
+
+```{r eval=FALSE}
+If x=y, then why do we need y.
+```
+---
+# Code Highlight and Code Output Higghlight
+```{r tx-wrangle, highlight.output = 3:4 , message=F, warning=F}
+library(babynames)
+library(tidyverse)
+tx_names <- babynames %>%
+  filter(name == "Dallas" | 
+         name == "Austin") %>%
+  filter(sex == "F") 
+glimpse(tx_names) #<<
+```
+
+---
+<!-- edit name1 and name2 in the YAML above -->
+
+[Back to the agenda](#agenda)
+
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(tidyverse) # load tidyverse package
+library(babynames) # load babynames package 
+#library(leaflet) # uncomment to use if you install
+
+```
+# Table
+```{r echo=F}
+head(tx_names) %>% 
+  knitr::kable(format = "html")
+```
+---
+# Data Table DT & GT
+
+
+ ### DT
+```{r echo=F}
+  library(DT)
+  head(tx_names) %>% 
+  datatable() 
+```
+
+
+---
+```{r eval = FALSE}
+# optional package installs if you want to do more below
+install.packages("leaflet")
+```
+
+
+<!-- introduce yourself here -->
+
+Hello my name is `r rmarkdown::metadata$author`! 
+
+Say something about what you do, what you use R Markdown for, your favorite R package, etc.
+
+<!-- include an image here, if you have a GitHub account use your profile pic! -->
+
+```{r photo, echo = FALSE}
+knitr::include_graphics("https://github.com/USERNAME.png") # update USERNAME here
+```
+
+---
+
+
+
+```{r filterdata}
+# getting the data
+namedata <- babynames %>%
+  filter(name == params$name1 | 
+           name == params$name2) %>% 
+  filter(sex == "F") #<<
+```
+
+<!-- get and see top years for each name -->
+
+```{r gettopyears}
+topyears <- namedata %>% 
+  group_by(name) %>% 
+  top_n(1, prop) 
+```
+
+---
+```{r topyear-name1}
+topyears %>% 
+  filter(name == params$name1)
+```
+
+
+```{r topyear-name2}
+topyears %>% 
+  filter(name == params$name2)
+```
+
+---
+<!-- plot name popularity over time -->
+<!-- we make the data here -->
+
+.pull-left[
+```{r plot-first, echo = FALSE}
+ggplot(namedata, 
+  aes(x = year, 
+      y = prop,  
+      group = name, 
+      color = name)) + 
+  geom_line() 
+```
+]
+.pull-right[
+```{r ref.label = 'plot-first', eval = FALSE}
+ library(DT)
+  head(tx_names) %>% 
+  datatable() 
+```
+]
+---
+
+```{r}
+
+```
+
+---
+<!-- where are you from? -->
+
+
+```{r eval = FALSE}
+# erase this chunk option if you want to include a map
+library(leaflet)
+leaflet() %>% addTiles() %>% setView(lat = 30.2621, lng = -97.7382, zoom = 17)
+```
+
+
+
+
+

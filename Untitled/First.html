@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello Markdown</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Rabbani M    Vanderbilt University Medical Center   Department of Biostatistics + Center for Critical Illness, Brain Dysfunction &amp; Survivorship" />
+    <meta name="date" content="2019-01-27" />
+    <link href="First_files/remark-css/default.css" rel="stylesheet" />
+    <link href="First_files/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="First_files/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <script src="First_files/htmlwidgets/htmlwidgets.js"></script>
+    <script src="First_files/jquery/jquery.min.js"></script>
+    <link href="First_files/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="First_files/datatables-binding/datatables.js"></script>
+    <link href="First_files/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="First_files/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="First_files/dt-core/js/jquery.dataTables.min.js"></script>
+    <link href="First_files/crosstalk/css/crosstalk.css" rel="stylesheet" />
+    <script src="First_files/crosstalk/js/crosstalk.min.js"></script>
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: left, middle, inverse, title-slide
+
+# Hello Markdown
+### Rabbani M <br> <span style="font-size: 50%;"> Vanderbilt University Medical Center <br> Department of Biostatistics + Center for Critical Illness, Brain Dysfunction &amp; Survivorship </span>
+### 2019-01-27
+
+---
+
+class: center, middle
+
+background-image: url(peocock.jpg)
+background-size: cover
+
+name: agenda
+
+class: right, top
+# &lt;font color="white"&gt; Agenda &lt;/font&gt;
+
+&lt;font color="white"&gt;
+
+1. Intro &lt;br&gt;
+2. Main message &lt;br&gt;
+3. Conclusion &lt;br&gt;
+&lt;/font&gt;
+
+&lt;span style="color:white"&gt;
+.large[Rabbani M | R Conference | 16 Jan 2019]
+&lt;/span&gt;
+---
+
+# Introduce yourself!
+
+.left[This is left aligned]
+.left[and babies.]
+
+&gt; My name is Rabbani and I am a Data Scientist &amp; Professional. I live in Reston, Virginia. I like `#rdogladies`
+.right[
+### Find me at...
+All the details...]
+---
+# Two Columns
+.pull-left[
+### Mom Cat
+![Image of Momtocat](http://bit.ly/momtocat)
+]
+.pull-right[
+### Wiki Toddy
+![Image of Tea](http://bit.ly/wiki-toddy)
+]
+
+???
+My notes
+???
+---
+# Incremental Reveal
+I like hot toddies
+&lt;br&gt;
+--
+`#rdogladies`
+&lt;br&gt;
+--
+and babies
+
+
+
+```r
+If x=y, then why do we need y.
+```
+---
+# Code Highlight and Code Output Higghlight
+
+```r
+library(babynames)
+library(tidyverse)
+tx_names &lt;- babynames %&gt;%
+  filter(name == "Dallas" | 
+         name == "Austin") %&gt;%
+  filter(sex == "F") 
+*glimpse(tx_names)
+```
+
+```
+## Observations: 171
+## Variables: 5
+*## $ year &lt;dbl&gt; 1892, 1894, 1896, 1899, 1900, 1903, 1904, 1905, 1906, 190...
+*## $ sex  &lt;chr&gt; "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F", "F...
+## $ name &lt;chr&gt; "Dallas", "Dallas", "Dallas", "Dallas", "Dallas", "Dallas...
+## $ n    &lt;int&gt; 9, 6, 7, 6, 9, 9, 9, 12, 8, 7, 14, 11, 20, 19, 24, 16, 28...
+## $ prop &lt;dbl&gt; 4.002e-05, 2.543e-05, 2.778e-05, 2.424e-05, 2.832e-05, 3....
+```
+
+---
+&lt;!-- edit name1 and name2 in the YAML above --&gt;
+
+[Back to the agenda](#agenda)
+
+
+
+
+# Table
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; year &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; sex &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; n &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; prop &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1892 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dallas &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.00e-05 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1894 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dallas &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.54e-05 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1896 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dallas &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.78e-05 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1899 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dallas &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.42e-05 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1900 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dallas &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.83e-05 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 1903 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; F &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dallas &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.24e-05 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+---
+# Data Table DT &amp; GT
+
+
+ ### DT
+<div id="htmlwidget-c772272b7f2b2355f147" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c772272b7f2b2355f147">{"x":{"filter":"none","data":[["1","2","3","4","5","6"],[1892,1894,1896,1899,1900,1903],["F","F","F","F","F","F"],["Dallas","Dallas","Dallas","Dallas","Dallas","Dallas"],[9,6,7,6,9,9],[4.002e-05,2.543e-05,2.778e-05,2.424e-05,2.832e-05,3.235e-05]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>year<\/th>\n      <th>sex<\/th>\n      <th>name<\/th>\n      <th>n<\/th>\n      <th>prop<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+
+
+---
+
+```r
+# optional package installs if you want to do more below
+install.packages("leaflet")
+```
+
+
+&lt;!-- introduce yourself here --&gt;
+
+Hello my name is Rabbani M &lt;br&gt; &lt;span style = 'font-size: 50%;'&gt; Vanderbilt University Medical Center &lt;br&gt; Department of Biostatistics + Center for Critical Illness, Brain Dysfunction &amp; Survivorship &lt;/span&gt; ! 
+
+Say something about what you do, what you use R Markdown for, your favorite R package, etc.
+
+&lt;!-- include an image here, if you have a GitHub account use your profile pic! --&gt;
+
+![](https://github.com/USERNAME.png)&lt;!-- --&gt;
+
+---
+
+
+
+
+```r
+# getting the data
+namedata &lt;- babynames %&gt;%
+  filter(name == params$name1 | 
+           name == params$name2) %&gt;% 
+* filter(sex == "F")
+```
+
+&lt;!-- get and see top years for each name --&gt;
+
+
+```r
+topyears &lt;- namedata %&gt;% 
+  group_by(name) %&gt;% 
+  top_n(1, prop) 
+```
+
+---
+
+```r
+topyears %&gt;% 
+  filter(name == params$name1)
+```
+
+```
+## # A tibble: 1 x 5
+## # Groups:   name [1]
+##    year sex   name       n    prop
+##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;int&gt;   &lt;dbl&gt;
+## 1  1979 F     Alison  2936 0.00170
+```
+
+
+
+```r
+topyears %&gt;% 
+  filter(name == params$name2)
+```
+
+```
+## # A tibble: 1 x 5
+## # Groups:   name [1]
+##    year sex   name        n    prop
+##   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;int&gt;   &lt;dbl&gt;
+## 1  1995 F     Allison  8126 0.00423
+```
+
+---
+&lt;!-- plot name popularity over time --&gt;
+&lt;!-- we make the data here --&gt;
+
+.pull-left[
+![](First_files/figure-html/plot-first-1.png)&lt;!-- --&gt;
+]
+.pull-right[
+
+```r
+ggplot(namedata, 
+  aes(x = year, 
+      y = prop,  
+      group = name, 
+      color = name)) + 
+  geom_line() 
+```
+]
+---
+
+
+
+---
+&lt;!-- where are you from? --&gt;
+
+
+
+```r
+# erase this chunk option if you want to include a map
+library(leaflet)
+leaflet() %&gt;% addTiles() %&gt;% setView(lat = 30.2621, lng = -97.7382, zoom = 17)
+```
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
